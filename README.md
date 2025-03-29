@@ -4,7 +4,7 @@ A robust RESTful API for user profile management with JWT authentication built u
 Assignment Overview
 This is a backend development assignment focused on building a user profile management API with authentication. The API allows users to register, log in, and manage their profile information securely.
 
-Core Requirements
+CORE REQUIREMENTS
 User registration/profile creation
 Profile retrieval
 Profile update
@@ -15,7 +15,8 @@ Comprehensive error handling
 User Profile Data
 Required fields: name, email, address, password (hashed)
 Optional fields: bio, profile picture URL
-Tech Stack
+
+TECH STACK
 Backend: Express.js
 Database: MongoDB
 Authentication: JWT
@@ -23,7 +24,8 @@ Validation: express-validator
 Password Hashing: bcryptjs
 Environment Variables: dotenv
 CORS Support: cors
-Project Structure
+
+PROJECT STRUCTURE
 ├── src/
 │   ├── controllers/
 │   │   ├── auth.controller.js   # Authentication logic
@@ -43,36 +45,39 @@ Project Structure
 ├── .gitignore                   # Git ignore file
 ├── package.json                 # Project dependencies
 └── README.md                    # Project documentation
-Prerequisites
+
+
+PREREQUISITES
 Node.js (v14 or higher)
 MongoDB (local installation or MongoDB Atlas account)
-Setup Instructions
-Clone the repository:
 
+Setup Instructions
+1.Clone the repository:
 git clone <repository-url>
 cd user-profile-api
-Install dependencies:
 
+2.Install dependencies:
 npm install
-Configure environment variables:
 
+3.Configure environment variables:
 Copy .env.example to .env
 Update the variables in .env with your configuration
 cp .env.example .env
-Start MongoDB (if using local installation):
 
+4.Start MongoDB (if using local installation):
 # Windows
 net start MongoDB
 
 # macOS/Linux
 sudo systemctl start mongod
-Start the server:
 
+5.Start the server:
 # Development mode
 npm run dev
 
 # Production mode
 npm start
+
 API Endpoints
 Authentication
 POST /api/auth/register - Register a new user
@@ -86,10 +91,9 @@ GET /api/profile/docs - View profile documentation
 Documentation
 GET / - API root with documentation links
 GET /api/test - Test endpoint
-Postman Documentation
-1. Register a User
-Request:
 
+POSTMAN DOCUMENTATION:
+1.Request:
 POST /api/auth/register
 Content-Type: application/json
 
@@ -100,7 +104,6 @@ Content-Type: application/json
   "address": "123 Main St"
 }
 Response (201 Created):
-
 {
   "success": true,
   "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...",
@@ -113,9 +116,9 @@ Response (201 Created):
     "updatedAt": "2023-03-28T14:23:15.123Z"
   }
 }
+
 2. Login User
 Request:
-
 POST /api/auth/login
 Content-Type: application/json
 
@@ -124,7 +127,6 @@ Content-Type: application/json
   "password": "securepassword"
 }
 Response (200 OK):
-
 {
   "success": true,
   "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...",
@@ -137,13 +139,12 @@ Response (200 OK):
     "updatedAt": "2023-03-28T14:23:15.123Z"
   }
 }
-3. Get User Profile (Authenticated)
-Request:
 
+3.Get User Profile (Authenticated)
+Request:
 GET /api/profile
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...
 Response (200 OK):
-
 {
   "success": true,
   "user": {
@@ -157,9 +158,9 @@ Response (200 OK):
     "updatedAt": "2023-03-28T14:23:15.123Z"
   }
 }
-4. Update User Profile (Authenticated)
-Request:
 
+4.Update User Profile (Authenticated)
+Request:
 PUT /api/profile
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...
 Content-Type: application/json
@@ -279,4 +280,9 @@ MONGODB_URI=mongodb://localhost:27017/user_profile_db
 # JWT Configuration
 JWT_SECRET=your_jwt_secret_key
 JWT_EXPIRES_IN=7d
- 
+Testing
+Test the API with Postman or any HTTP client:
+
+1.Register a user to obtain a JWT token
+2.Use the token for authenticated routes
+T3.est CRUD operations on user profile
