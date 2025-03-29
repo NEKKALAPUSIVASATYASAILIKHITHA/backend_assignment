@@ -279,3 +279,4 @@ MONGODB_URI=mongodb://localhost:27017/user_profile_db
 # JWT Configuration
 JWT_SECRET=your_jwt_secret_key
 JWT_EXPIRES_IN=7d
+ 
